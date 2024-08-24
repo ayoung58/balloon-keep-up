@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4852444045592084708, guid: 4cb4177ab22588b4280622685fd9033d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4852444045592084708, guid: 4cb4177ab22588b4280622685fd9033d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -170,6 +170,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5431348095523650970, guid: 4cb4177ab22588b4280622685fd9033d, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431348095523650970, guid: 4cb4177ab22588b4280622685fd9033d, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431348095523650970, guid: 4cb4177ab22588b4280622685fd9033d, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9085505215271790253, guid: 4cb4177ab22588b4280622685fd9033d, type: 3}
       propertyPath: m_Name
       value: Player 1
@@ -199,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d560f69d1e9a74ca20e23562d58162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 10
 --- !u!1 &569828494
 GameObject:
   m_ObjectHideFlags: 0

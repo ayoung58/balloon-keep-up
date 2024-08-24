@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player1Controller : MonoBehaviour
 {
-    public float speed;
+    public float speed = 1;
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -14,11 +14,12 @@ public class Player1Controller : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float forwardInput = Input.GetAxis("Vertical");
-        float horizontalInput = Input.GetAxis("Horizontal");
-        rb.AddForce(Vector3.forward * speed * forwardInput);
-        rb.AddForce(Vector3.right * speed * horizontalInput);
+         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        //Apply the movement vector to the current position, which is
+        //multiplied by deltaTime and speed for a smooth MovePosition
+        rb.MovePosition(transform.position + direction * Time.deltaTime * speed);
     }
 }
