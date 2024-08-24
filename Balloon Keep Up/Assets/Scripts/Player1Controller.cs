@@ -5,12 +5,12 @@ using UnityEngine;
 public class Player1Controller : MonoBehaviour
 {
     public float speed = 1;
+    public float keepUpStrength = 5;
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
     }
 
     // Update is called once per frame
@@ -21,5 +21,14 @@ public class Player1Controller : MonoBehaviour
         //Apply the movement vector to the current position, which is
         //multiplied by deltaTime and speed for a smooth MovePosition
         rb.MovePosition(transform.position + direction * Time.deltaTime * speed);
+    }
+
+    void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.CompareTag("Balloon")) {
+            Rigidbody balloonRb = collision.gameObject.GetComponent<Rigidbody>();
+            Vector3 keepUpDirection = collision.gameObject.transform.position - transform.position;
+            
+            balloonRb.AddForce(keepUpDirection * keepUpStrength, ForceMode.Impulse);
+        }
     }
 }
