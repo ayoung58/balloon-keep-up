@@ -6,23 +6,28 @@ public class Player2Controller : MonoBehaviour
 {
     public float speed = 1;
     public float keepUpStrength = 5;
+    public float rotationSpeed = 30;
+    private GameObject focalPoint;
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
+        focalPoint = GameObject.Find("Focal Point 2");
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 direction = new Vector3(Input.GetAxis("Horizontal2"), 0, Input.GetAxis("Vertical2"));
+        float turn = Input.GetAxis("Horizontal2");
+        transform.Rotate(Vector3.up, turn * rotationSpeed * Time.deltaTime);
+        Vector3 direction = (focalPoint.transform.position - transform.position).normalized;
 
-        //Apply the movement vector to the current position, which is
-        //multiplied by deltaTime and speed for a smooth MovePosition
-        rb.MovePosition(transform.position + direction * Time.deltaTime * speed);
-
+        if (Input.GetKey(KeyCode.W)) {
+            rb.MovePosition(transform.position + direction * Time.deltaTime * speed);
+        } else if (Input.GetKey(KeyCode.S)) {
+            rb.MovePosition(transform.position - direction * Time.deltaTime * speed);
+        }
     }
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Balloon")) {
