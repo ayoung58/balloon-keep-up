@@ -355,9 +355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d560f69d1e9a74ca20e23562d58162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   keepUpStrength: 30
-  rotationSpeed: 30
+  rotationSpeed: 75
 --- !u!1 &465915602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,9 +1000,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba57a1f369898e24bbb68d0b7c1c8080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   keepUpStrength: 30
-  rotationSpeed: 30
+  rotationSpeed: 75
 --- !u!1 &853039385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,7 +1647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5431348095523650970, guid: 4cb4177ab22588b4280622685fd9033d, type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 9085505215271790253, guid: 4cb4177ab22588b4280622685fd9033d, type: 3}
       propertyPath: m_Name
