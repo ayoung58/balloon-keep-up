@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player2Controller : MonoBehaviour
+public class Player2Controller : PlayerController
 {
-    public float speed = 1;
-    public float keepUpStrength = 5;
-    public float rotationSpeed = 30;
-    // private GameObject focalPoint;
+
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        // focalPoint = GameObject.Find("Focal Point 2");
     }
 
     // Update is called once per frame
@@ -36,13 +32,5 @@ public class Player2Controller : MonoBehaviour
         // } else if (Input.GetKey(KeyCode.S)) {
         //     rb.MovePosition(transform.position - direction * Time.deltaTime * speed);
         // }
-    }
-    void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.CompareTag("Balloon")) {
-            Rigidbody balloonRb = collision.gameObject.GetComponent<Rigidbody>();
-            Vector3 keepUpDirection = collision.gameObject.transform.position - transform.position;
-            
-            balloonRb.AddForce(keepUpDirection * keepUpStrength, ForceMode.Impulse);
-        }
     }
 }
