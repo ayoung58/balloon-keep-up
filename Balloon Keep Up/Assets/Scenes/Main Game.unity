@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 569828495}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -998,6 +998,7 @@ GameObject:
   - component: {fileID: 853039387}
   - component: {fileID: 853039391}
   - component: {fileID: 853039390}
+  - component: {fileID: 853039392}
   m_Layer: 0
   m_Name: Balloon
   m_TagString: Balloon
@@ -1064,7 +1065,7 @@ Transform:
   m_GameObject: {fileID: 853039385}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 9.33, z: 2}
+  m_LocalPosition: {x: 4.55, y: 12.09, z: 5.67}
   m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1120,6 +1121,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &853039392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853039385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656c33f907e70424d97f2de9367fe225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
