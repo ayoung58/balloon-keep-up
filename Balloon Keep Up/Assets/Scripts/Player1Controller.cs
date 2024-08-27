@@ -9,7 +9,7 @@ public class Player1Controller : PlayerController
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

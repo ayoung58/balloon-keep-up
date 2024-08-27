@@ -7,6 +7,12 @@ public class PlayerController : MonoBehaviour
     public float speed = 1;
     public float keepUpStrength = 5;
     public float rotationSpeed = 30;
+    public AudioClip audioClip;
+    protected AudioSource audioSource;
+
+    void Start() {
+
+    }
 
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Balloon")) {
@@ -14,6 +20,8 @@ public class PlayerController : MonoBehaviour
             Vector3 keepUpDirection = collision.gameObject.transform.position - transform.position;
             
             balloonRb.AddForce(keepUpDirection * keepUpStrength, ForceMode.Impulse);
+
+            audioSource.PlayOneShot(audioClip, 1.0f);
         }
     }
 }
