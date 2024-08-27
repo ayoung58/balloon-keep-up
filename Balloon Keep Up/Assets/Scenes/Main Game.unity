@@ -2272,6 +2272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreTextPlayer1: {fileID: 149300842}
   scoreTextPlayer2: {fileID: 701747136}
+  timeText: {fileID: 528081380}
+  gameTime: 60
 --- !u!1 &1494010843
 GameObject:
   m_ObjectHideFlags: 0
