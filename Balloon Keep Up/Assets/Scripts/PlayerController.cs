@@ -10,8 +10,10 @@ public class PlayerController : MonoBehaviour
     public AudioClip audioClip;
     protected AudioSource audioSource;
 
-    void Start() {
+    protected UIManager uIManager;
 
+    void Start() {
+        
     }
 
     void OnCollisionEnter(Collision collision) {
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
             balloonRb.AddForce(keepUpDirection * keepUpStrength, ForceMode.Impulse);
 
             audioSource.PlayOneShot(audioClip, 1.0f);
+            uIManager.updatePossession();
         }
     }
 }

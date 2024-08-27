@@ -10,6 +10,7 @@ public class Player1Controller : PlayerController
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        uIManager = GameObject.FindObjectOfType<UIManager>();
     }
 
     // Update is called once per frame
