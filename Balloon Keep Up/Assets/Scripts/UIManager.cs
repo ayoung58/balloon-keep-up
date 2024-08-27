@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI scoreTextPlayer1;
     public TextMeshProUGUI scoreTextPlayer2;
     public TextMeshProUGUI timeText;
+    public GameObject gameOverScreen;
     public float gameTime = 60;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,11 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        updateTime();
+        if (gameTime > 0) {
+            updateTime();
+        } else {
+            gameOver();
+        }
     }
 
     public void updateScore(int player, int score) {
@@ -34,19 +39,10 @@ public class UIManager : MonoBehaviour
     void updateTime() {
         gameTime -= Time.deltaTime;
         timeText.text = (Mathf.RoundToInt(gameTime)).ToString();
-        if (gameTime <= 0) {
-            gameOver();
-        }
     }
 
     void gameOver() {
-        if (Application.isEditor)
-        {
-            EditorApplication.ExitPlaymode();
-        }
-        else
-        {
-            Application.Quit();
-        }
+        gameOverScreen.SetActive(true);
+        Time.timeScale = 0.0f;
     }
 }
